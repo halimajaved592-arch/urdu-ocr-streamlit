@@ -1,13 +1,13 @@
 import streamlit as st
 import torch
 from PIL import Image
-from transformers import TrOCRProcessor, VisionEncoderDecoderModel
+from transformers import AutoProcessor, VisionEncoderDecoderModel
 
 st.set_page_config(page_title="Urdu OCR", page_icon="📖")
 
 @st.cache_resource
 def load_model():
-    processor = TrOCRProcessor.from_pretrained("microsoft/trocr-base-printed")
+    processor = AutoProcessor.from_pretrained("microsoft/trocr-base-printed")
     model = VisionEncoderDecoderModel.from_pretrained("microsoft/trocr-base-printed")
     model.eval()
     return processor, model
@@ -27,7 +27,7 @@ if uploaded_file is not None:
     st.image(image, caption="Uploaded Image", use_container_width=True)
 
     with st.spinner("Extracting text..."):
-        pixel_values = processor(image, return_tensors="pt").pixel_values
+        pixel_values = processor(images=image, return_tensors="pt").pixel_values
 
         with torch.no_grad():
             generated_ids = model.generate(pixel_values)
