@@ -1,7 +1,7 @@
 import streamlit as st
 import torch
 from PIL import Image
-from transformers import AutoProcessor, VisionEncoderDecoderModel
+from transformers import TrOCRProcessor, VisionEncoderDecoderModel
 
 st.set_page_config(page_title="Urdu OCR", page_icon="📖")
 
