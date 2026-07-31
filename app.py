@@ -37,7 +37,7 @@ if uploaded_file is not None:
         with torch.no_grad():
             generated_ids = model.generate(pixel_values)
 
-        prediction = processor.tokenizer.batch_decode(
+        prediction = processor.batch_decode(
             generated_ids,
             skip_special_tokens=True
         )[0]
