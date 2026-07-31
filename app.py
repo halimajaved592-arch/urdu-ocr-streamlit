@@ -31,11 +31,12 @@ if uploaded_file is not None:
 
         with torch.no_grad():
             generated_ids = model.generate(pixel_values)
-
-        prediction = processor.batch_decode(
-            generated_ids,
-            skip_special_tokens=True
-        )[0]
+            
+prediction = processor.tokenizer.batch_decode(
+    generated_ids,
+    skip_special_tokens=True
+)[0]
+       
 
     st.subheader("Extracted Text")
     st.write(prediction)
