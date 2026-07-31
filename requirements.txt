@@ -1,6 +1,7 @@
 streamlit
 torch
-transformers==4.44.2
+transformers
 Pillow
 sentencepiece
 safetensors
+protobuf
