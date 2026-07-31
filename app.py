@@ -7,7 +7,7 @@ st.set_page_config(page_title="Urdu OCR", page_icon="📖")
 
 @st.cache_resource
 def load_model():
-    processor = AutoProcessor.from_pretrained("microsoft/trocr-base-printed")
+    processor = TrOCRProcessor.from_pretrained("microsoft/trocr-base-printed")
     model = VisionEncoderDecoderModel.from_pretrained("microsoft/trocr-base-printed")
     model.eval()
     return processor, model
