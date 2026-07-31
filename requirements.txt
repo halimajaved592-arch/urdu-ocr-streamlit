@@ -1,7 +1,6 @@
-streamlit==1.39.0
-torch==2.4.1
-transformers==4.44.2
-tokenizers==0.19.1
-sentencepiece==0.2.0
-Pillow==10.4.0
-safetensors==0.4.5
+streamlit
+torch
+transformers
+Pillow
+sentencepiece
+safetensors
