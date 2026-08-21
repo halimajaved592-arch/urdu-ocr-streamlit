@@ -3,8 +3,7 @@
 Urdu OCR application built during the Code Saviours ML/AI Internship (SI-26).
 
 ## Live Demo
-
-(Streamlit link will be added after deployment.)
+https://urdu-ocr-app-qt2ugpnd6qugoq85hobpja.streamlit.app/
 
 ## Model
 
